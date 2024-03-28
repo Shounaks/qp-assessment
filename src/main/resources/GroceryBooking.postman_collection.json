@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "c1b76266-5319-4f7b-856c-8a02e122bed5",
+		"name": "GroceryBooking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14666549"
+	},
+	"item": [
+		{
+			"name": "Unrestricted API",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Shounak Non-zADsM\",\r\n    \"password\" : \"123142\",\r\n    \"emailId\" : \"absasaxaacNon\",\r\n    \"isAdmin\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/grocerybooking/authentication/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"grocerybooking",
+								"authentication",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailId\": \"abcNon\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/grocerybooking/authentication/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"grocerybooking",
+								"authentication",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "ADD Grocery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhYnNhc2F4YWFjTm9uIiwiaWF0IjoxNzExNjIwODczLCJleHAiOjE3MTE2MjIzMTN9.swcI_rRVGA5jkAx6h06tgupDMLrAXiDvnhWIPN-1mIo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"BadsadadadCs\",\r\n    \"price\" : 543.23,\r\n    \"inventory\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/grocery/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"grocery",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Grocery List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhYnNhc2F4YWFjTm9uIiwiaWF0IjoxNzExNjIwODczLCJleHAiOjE3MTE2MjIzMTN9.swcI_rRVGA5jkAx6h06tgupDMLrAXiDvnhWIPN-1mIo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admin/grocery/0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"grocery",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Grocery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYnNhc2F4YWFjTm9uIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzExNjIwMTg0LCJleHAiOjE3MTE2MjE2MjR9.9-9Cl0RhqF285PXkDuey6gA4QlJQI-NIOUnVPKTBUo4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admin/grocery/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"grocery",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Grocery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYnNhc2F4YWFjTm9uIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzExNjIwMTg0LCJleHAiOjE3MTE2MjE2MjR9.9-9Cl0RhqF285PXkDuey6gA4QlJQI-NIOUnVPKTBUo4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Custom Product\",\r\n    \"price\" : 12345.22,\r\n    \"inventory\": 250\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/grocery/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"grocery",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MANAGE INVENTORY",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYnNhc2F4YWFjTm9uIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzExNjIwMTg0LCJleHAiOjE3MTE2MjE2MjR9.9-9Cl0RhqF285PXkDuey6gA4QlJQI-NIOUnVPKTBUo4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Custom Product\",\r\n    \"price\" : 12345.22,\r\n    \"inventory\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/grocery/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"grocery",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User + Admin",
+			"item": [
+				{
+					"name": "GET All Items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhYnNhc2F4YWFjTm9uIiwiaWF0IjoxNzExNjIwODczLCJleHAiOjE3MTE2MjIzMTN9.swcI_rRVGA5jkAx6h06tgupDMLrAXiDvnhWIPN-1mIo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/grocery/0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"grocery",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book Grocery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhYnNhc2F4YXNhY05vbiIsImlhdCI6MTcxMTYyMzE5MSwiZXhwIjoxNzExNjI0NjMxfQ.jMIdPVY12IBH-AlbpqcKKB388zybSQxJb_XlpGotJp8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groceryIdList\": [6,7,8]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/grocery/book/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"grocery",
+								"book",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Booked Items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhYnNhc2F4YXNhY05vbiIsImlhdCI6MTcxMTYyMzE5MSwiZXhwIjoxNzExNjI0NjMxfQ.jMIdPVY12IBH-AlbpqcKKB388zybSQxJb_XlpGotJp8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groceryIdList\": [6,7,8]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/grocery/booked/0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"grocery",
+								"booked",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
