@@ -29,4 +29,4 @@ Database:
 # Remaining Items/ Improvements:
 - Due to lack of time, I couldnt add AOP, User Input Sanitization, Proper logging flow + Formatter, PII Masking, and some other items, that i do generally.
 - Currently i have shifted to Local Dockerized MySQL but would prefer something like railway.app or any other service, for demo.
-- Would have loved to add unit testing, Integration testing using Mockito, AssertJ, wireframe,etc.
+- Would have loved Integration testing WireMock, etc.
