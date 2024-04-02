@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/admin")
 @PreAuthorize("hasAuthority('ADMIN')")
 @RequiredArgsConstructor
+@SuppressWarnings("unused")
 public class AdminController {
     private final AdminService adminService;
 

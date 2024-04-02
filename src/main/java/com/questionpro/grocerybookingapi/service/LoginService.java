@@ -28,16 +28,18 @@ public class LoginService {
                 .id(savedUser.getId())
                 .name(savedUser.getName())
                 .emailId(savedUser.getEmailId())
-                .password("***************")//Hide the password and don't send the real Password
+                .password("***************") //Hide the password and don't send the real Password
                 .isAdmin(Role.ADMIN.equals(savedUser.getRole()))
                 .build();
     }
 
-    public Optional<User> retrieveUserById(Long userId) {
+    @Deprecated(forRemoval = true)
+    private Optional<User> retrieveUserById(Long userId) {
         return userRepository.findById(userId);
     }
 
-    public Optional<User> retrieveUserByEmail(String email) {
+    @Deprecated(forRemoval = true)
+    private Optional<User> retrieveUserByEmail(String email) {
         return userRepository.findByEmailId(email);
     }
 
@@ -53,14 +55,14 @@ public class LoginService {
                 .build();
 
         User newUser = userRepository.save(user);
-        var jwtToken = jwtService.generateToken(user.getEmailId(),user.getRole().toString());
+        var jwtToken = jwtService.generateToken(user.getEmailId(), user.getRole().toString());
         return hideUserPassword(newUser, jwtToken);
     }
 
     public AuthenticationResponse loginUser(LoginRequest registerRequest) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(registerRequest.getEmailId(), registerRequest.getPassword()));
         var user = userRepository.findByEmailId(registerRequest.getEmailId()).orElseThrow(() -> new UserServiceException("Login Error: User or Password Invalid"));
-        var jwtToken = jwtService.generateToken(user.getEmailId(),user.getRole().toString());
+        var jwtToken = jwtService.generateToken(user.getEmailId(), user.getRole().toString());
         return hideUserPassword(user, jwtToken);
     }
 }
